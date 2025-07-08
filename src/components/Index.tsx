@@ -12,8 +12,8 @@ const CustomInput = (props: InputTextProps) => {
   const colors= useTheme().colors
   return (
     <View>
-      <Text style={styles.baseText}>{props.label}</Text>
-      <TextInput style={[styles.input, {color: colors.text, backgroundColor: colors.card}]} secureTextEntry={props.secureText} />
+      <Text style={[styles.baseText, {color: colors.text}]}>{props.label}</Text>
+      <TextInput style={[styles.input, {color: colors.text, backgroundColor: colors.card, borderColor:colors.border}]} secureTextEntry={props.secureText} />
     </View>
   );
 };
@@ -24,11 +24,13 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     color: 'black',
-    marginBottom:20
+    marginBottom:5,
+    borderWidth:1
   },
   baseText: {
     padding: 5,
-    color: 'gray',
+    fontSize: 14,
+    fontWeight:400
   },
 });
 

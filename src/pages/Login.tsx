@@ -15,27 +15,28 @@ const Login = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={[styles.baseTxt, {color: colors.text}]}>
+      <Text style={[styles.baseTxt, { color: colors.text }]}>
         Hey, Hello 👋
       </Text>
       <Text style={[styles.smallTxt, { color: colors.text }]}>
         Enter your credentials to access your account
       </Text>
       <View style={styles.btnGrp}>
-        <LoginOptionBtn label="Google"/>
-        <LoginOptionBtn label="Facebook"/>
+        <LoginOptionBtn label="Google" />
+        <LoginOptionBtn label="Facebook" />
       </View>
-      
+
       <View style={styles.btnGrp}>
-        <Divider/>
-        <Text style={{color: colors.border, fontWeight:600}}>or</Text>
-        <Divider/>
+        <Divider />
+        <Text style={{ color: colors.text, fontWeight: 600, fontSize: 16 }}>
+          or
+        </Text>
+        <Divider />
       </View>
 
       <View style={styles.formContainer}>
         <CustomInput label="Email" value={email} onChangeText={setEmail} />
         <CustomInput
-          style={styles.container}
           label="Password"
           value={password}
           onChangeText={setPassword}
@@ -48,6 +49,11 @@ const Login = () => {
           console.log('df');
         }}
       />
+      <Text style={{ color: colors.text }}>
+        {' '}
+        Dont have an account yet?
+        <Text style={styles.link}> Sign up here</Text>
+      </Text>
     </View>
   );
 };
@@ -58,34 +64,32 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'baseline',
     paddingHorizontal: 20,
-    borderWidth: 2,
-    borderColor: 'green',
   },
   formContainer: {
-    height: 200,
-    borderRadius: 15,
-    width:'100%'
+    width: '100%',
   },
   baseTxt: {
     fontSize: 30,
     fontWeight: 800,
-    marginBottom: 15
+    marginBottom: 15,
+    fontFamily: 'Playfair-Variable'
   },
   smallTxt: {
     fontSize: 17,
-    fontWeight: 200,
-    marginBottom:30
+    fontWeight: 300,
+    marginBottom: 30,
   },
   link: {
-    color: '#4D81E7',
+    color: '#0098FF',
+    fontWeight: 600
   },
   btnGrp: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    width:'100%',
-    marginBottom:15
-  }
+    width: '100%',
+    marginBottom: 15,
+  },
 });
 
 export default Login;

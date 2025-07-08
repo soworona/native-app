@@ -8,25 +8,27 @@ const CustomBtn = ({onPress}: CustomBtnProps) =>{
     return(
         <TouchableOpacity style={styles.backgroundStyle} onPress={onPress}>
             <Text 
-            style={{
-              color:'white', 
-              textAlign:'center',
-              fontWeight:600}}>LOGIN</Text>
+            style={styles.txt}>Log in</Text>
         </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
   backgroundStyle: {
-    backgroundColor:'#1D61E7',
+    backgroundColor:'#0098FF',
     width:345,
     borderRadius:10,
     height: 50,
     alignItems: 'center',
     paddingVertical: 14,
-    marginTop:20,
-    marginLeft:20
+    marginVertical:20,
   },
-});
+  txt: {
+    color:'white', 
+    textAlign:'center',
+    fontWeight:600,
+  fontSize: 16}
+  }
+);
 
 export default CustomBtn;
