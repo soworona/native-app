@@ -1,36 +1,43 @@
 import { useTheme } from "@react-navigation/native";
-import { Image, StyleSheet, Text, TouchableOpacity } from "react-native"
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 
-const LoginOptionBtn = () => {
+type LoginOptionBtnProps ={
+    label: string,
+}
+const logoMap: Record<string, any> = {
+  Facebook: require('.././assets/icons8-facebook-192.png'),
+  Google: require('.././assets/icons8-google-192.png'),
+};
+
+const LoginOptionBtn = (props:LoginOptionBtnProps) => {
       const colors = useTheme().colors;
     
     return(
-        <TouchableOpacity
-        style={styles.btn}>
+        <View
+        style={[styles.btn, {backgroundColor: colors.card, borderColor: colors.border}]}>
             <Image 
-            source ={require('.././assets/icons8-facebook-192.png')} 
+            source ={logoMap[props.label]}
             style = {styles.icon}/> 
             <Text 
-            style={[ styles.txt, {color: colors.text} ]}>Facebook</Text>
-        </TouchableOpacity>
+            style={[ styles.txt, {color:colors.text}]}>{props.label}</Text>
+        </View>
     )
 };
 
 const styles = StyleSheet.create({
     btn: {
         borderWidth:1,
-        borderColor:'#E9E9E9',
-        display:'flex',
         flexDirection:'row',
         alignItems:'center',
         gap: 8,
         paddingHorizontal:20,
-        paddingVertical: 10,
-        borderRadius:10
+        paddingVertical: 7,
+        borderRadius:10, 
+        width:160,
     },
     txt: {
         fontSize: 16,
-        fontWeight: 400
+        fontWeight: 500
     },
     icon: {
         width:35,
