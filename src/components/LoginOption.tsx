@@ -5,8 +5,8 @@ type LoginOptionBtnProps ={
     label: string,
 }
 const logoMap: Record<string, any> = {
-  Facebook: require('.././assets/icons8-facebook-192.png'),
-  Google: require('.././assets/icons8-google-192.png'),
+  Facebook: require('.././assets/icons/icons8-facebook-192.png'),
+  Google: require('.././assets/icons/icons8-google-192.png'),
 };
 
 const LoginOptionBtn = (props:LoginOptionBtnProps) => {

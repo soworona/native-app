@@ -45,7 +45,7 @@ const Login = () => {
       </View>
       <CustomBtn
         onPress={() => {
-          navigation.navigate('Home');
+          navigation.navigate('Todo');
           console.log('df');
         }}
       />
