@@ -4,7 +4,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useState } from 'react';
 import CustomBtn from '../components/Button';
 import IconBtn from '../components/IconButton';
-import Icon from '@react-native-vector-icons/material-icons';
 import TodoOptions from '../components/TodoOptions';
 
 const Todo = () => {
@@ -12,18 +11,16 @@ const Todo = () => {
   const [todoTask, setTodoTask] = useState('');
 
   return (
-    <View style={[styles.screen, { backgroundColor: colors.card }]}>
-      <SafeAreaView>
-        <View
-          style={[
-            styles.navbar,
-            { height:60, borderColor: colors.border, borderBottomWidth: 1 },
-          ]}
-        >
-          <IconBtn label="chevronLeft" />
-          <IconBtn label="profile" />
-        </View>
-      </SafeAreaView>
+    <SafeAreaView style={[styles.screen, { backgroundColor: colors.card }]}>
+      <View
+        style={[
+          styles.navbar,
+          { height: 60, borderColor: colors.border, borderBottomWidth: 1 },
+        ]}
+      >
+        <TodoOptions icon="back" />
+        <TodoOptions icon="profile" />
+      </View>
       <View style={styles.container}>
         <CustomBtn
           onPress={() => {
@@ -41,8 +38,10 @@ const Todo = () => {
         ]}
       >
         <TodoOptions label="Show all" icon="all" />
+        <TodoOptions label="Show completed" icon="completed" />
+        <TodoOptions label="Show active" icon="active" />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -55,7 +54,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: 20,
+    paddingHorizontal: 10,
   },
   container: {
     flexGrow: 1,

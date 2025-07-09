@@ -22,7 +22,7 @@ const IconBtn = (props: IconBtnProps) => {
 const styles= StyleSheet.create({
     icon: {
     height: 35,
-    width: 35
+    width: 35,
     }
 })
 
